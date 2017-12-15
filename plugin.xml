@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-is-debuggable"
+    version="0.1.0">
+
+    <name>Is Debuggable</name>
+    <description>Is the application debuggable?</description>
+    <author>Adriano Di Giovanni</author>
+    <license>MIT</license>
+    <keywords>build,BuildConfig,DEBUG</keywords>
+
+    <engines>
+        <engine name="cordova" version=">= 7.0.0" />
+        <engine name="cordova-android" version=">= 7.0.0" />
+        <engine name="cordova-ios" version=">= 4.5.4" />
+    </engines>
+
+    <js-module name="isDebuggable" src="www/index.js">
+        <clobbers target="window.plugins.isDebuggable" />
+    </js-module>
+
+    <js-module src="tests/index.js" name="tests" />
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="isDebuggable">
+                <param
+                    name="android-package"
+                    value="com.adrianodigiovanni.isdebuggable.CDVIsDebuggable"/>
+            </feature>
+        </config-file>
+        <source-file
+            src="src/android/CDVIsDebuggable.java"
+            target-dir="src/com/adrianodigiovanni/isdebuggable" />
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/widget" target="config.xml">
+            <feature name="isDebuggable">
+                <param name="ios-package" value="CDVIsDebuggable"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVIsDebuggable.h"/>
+        <source-file src="src/ios/CDVIsDebuggable.m"/>
+    </platform>
+</plugin>
