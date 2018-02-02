@@ -18,7 +18,7 @@ public class CDVIsDebuggable extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals(ACTION_GET)) {
-            Context context = cordova.getContext();
+            Context context = cordova.getActivity();
             get(context, callbackContext);
             return true;
         }

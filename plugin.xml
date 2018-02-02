@@ -2,7 +2,7 @@
 <plugin
     xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="cordova-plugin-is-debuggable"
-    version="0.1.1">
+    version="0.1.2">
 
     <name>Is Debuggable</name>
     <description>Is the application debuggable?</description>

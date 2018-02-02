@@ -1,6 +1,6 @@
 {
     "name": "cordova-plugin-is-debuggable",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Is the application debuggable?",
     "scripts": {
         "precommit": "lint-staged"
